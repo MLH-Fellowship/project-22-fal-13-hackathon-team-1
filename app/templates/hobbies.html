@@ -1,0 +1,32 @@
+{% extends "pageOverlay.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center p-10 container-fluid">
+    <div class="justify-content-center align-items-center">
+        <div class="pb-3">
+            <h1>Hobbies</h1>
+        </div>
+        <div class="row">
+            {% for hobby in hobbyData %}
+            <div class="w-50 p-3">
+                <div class="card mb-3 h-auto" >
+                    <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src={{hobby.imgSrc}} class="img-fluid rounded-start h-100 w-100" alt="Portrait Placeholder">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                        <h5 class="card-title">{{hobby.name}}</h5>
+                        <p class="card-text">
+                            {{hobby.description}}
+                        </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
+
