@@ -1,8 +1,23 @@
 
 
 {% block hero %}
-<section id="hero">
-<h1> About Me </h1>
-<img class="rounded float-left img-thumbnail" src="../../static/img/Portrait_Placeholder.png"  alt="placeholder image"/>
+<section class="container-fluid" id="hero"> 
+  <h1 class='text-center text-primary '> About Me </h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm">
+        <img class="rounded float-start img-thumbnail border border-5 border-primary" src="../../static/img/logo.jpg"  alt="placeholder image"/>
+        
+      </div>
+      <div class="col-sm">
+        <p class="text-right" >Write a Bit About Yourself Here
+        </p>
+			</div>
+		</div>
+	</div> 
 </section>
+
+
+
+
 {% endblock %}
