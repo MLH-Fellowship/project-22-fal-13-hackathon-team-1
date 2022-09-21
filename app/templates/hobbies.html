@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "pageOverlay.html" %}
 
-    <!-- Bootstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-    <title>{%block title %} {% endblock %} MLH Portfolio - Hobbies</title>
-    
-</head>
-<body class="d-flex justify-content-center align-items-center p-10 container-fluid">
+{% block content %}
+<div class="d-flex justify-content-center align-items-center p-10 container-fluid">
     <div class="justify-content-center align-items-center">
         <div class="pb-3">
             <h1>Hobbies</h1>
@@ -36,5 +27,6 @@
             </div>
             {% endfor %}
         </div>
-</body>
-</html>
+    </div>
+{% endblock content %}
+
