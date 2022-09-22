@@ -12,15 +12,16 @@
 </head>
 
 <body class="container w-100">
-    <nav class="navbar w-100" style="height: 70px;">
+    <nav class="navbar w-100 fw-semibold" style="height: 70px;">
         <div class="container-fluid px-4">
             <a class="navbar-brand pt-3" href="/">
                 <h2 class="text-primary">
                     {{title}}
                 </h2>
             </a>
-            <div class="navbar-expand">
-                <ul class="navbar-nav" >
+            <!-- Nav bar row-display -->
+            <div class="navbar-expand show-nav-bar">
+                <ul class="navbar-nav gap-3" >
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                         <!-- add dropdown -->
@@ -32,9 +33,46 @@
                         <a class="nav-link" href="/experience">Experience</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/location">Locations</a>
+                        <a class="nav-link" href="/locations">Locations</a>
                     </li>
                 </ul>
+            </div>
+
+            <!-- Nav bar side-display -->
+            <div class="show-side-nav">
+                <!-- Button for side nav -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Side Nav logic -->
+                <div class="offcanvas offcanvas-end"  tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <!-- Header -->
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                            Navigation
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <!-- Body -->
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav gap-1" >
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
+                                <!-- add dropdown -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/hobbies">Hobbies</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/experience">Experience</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/locations">Locations</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
