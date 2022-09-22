@@ -1,40 +1,42 @@
 {% extends "pageOverlay.html" %}
 
 {% block content %}
-<div class="d-flex justify-content-center align-items-center p-10 container-fluid">
-    <div class="p-4 text-center">
-        <h1>Experience</h1>
-        <div class="container w-100 pt-3 rounded border border-5 border-primary">
+<body>
+    <div class="d-flex justify-content-center align-items-center p-10 container-fluid">
+        <div class="p-4 text-center">
+            <h1>Experience</h1>
+            <div class="container w-100 pt-3 rounded border border-5 border-primary">
 
-            <ul class="list-group list-group-flush p-3 w-100 rounded">
-                {% for item in experienceData %}
-                <li class="list-group-item py-4" >
-                    <div class="row">
-                        <img class="p-0" style="max-width: 48px; max-height: 48px;" src={{item.company_img}} />
-                        <div class="col text-start" >
-                            <span style="line-height: 10px;">
-                                <p><strong>{{item.job_title}}</strong></p>
-                                <p>{{item.company_name}} · {{item.position_type}}</p>
-                                <span style="color: #444; font-size: 0.9em;">
-                                    <p>{{item.date_worked}}</p>
-                                    <p>{{item.location}}</p>
+                <ul class="list-group list-group-flush p-1 w-100 rounded">
+                    {% for item in experienceData %}
+                    <li class="list-group-item py-4" >
+                        <div class="row">
+                            <img class="p-0" style="max-width: 48px; max-height: 48px;" src={{item.company_img}} />
+                            <div class="col text-start" >
+                                <span style="line-height: 16px;">
+                                    <p><strong>{{item.job_title}}</strong></p>
+                                    <p>{{item.company_name}} · {{item.position_type}}</p>
+                                    <span style="color: #444; font-size: 0.9em;">
+                                        <p>{{item.date_worked}}</p>
+                                        <p>{{item.location}}</p>
+                                    </span>
                                 </span>
-                            </span>
 
-                            <ul>
-                            {% for bullet in item.description %}
-                                <li>{{bullet}}</li>
-                            {% endfor %}
-                            </ul>
+                                <ul>
+                                {% for bullet in item.description %}
+                                    <li>{{bullet}}</li>
+                                {% endfor %}
+                                </ul>
 
+                            </div>
                         </div>
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
 
         </div>
-
     </div>
-</div>
+</body>
 {% endblock content%}

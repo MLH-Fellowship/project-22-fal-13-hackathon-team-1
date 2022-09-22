@@ -13,22 +13,10 @@ body {
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 320px) {
-    .show-side-nav{
-        display: block;
-    }
-    .show-nav-bar{
-        display: none;
-    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .show-side-nav{
-        display: block;
-    }
-    .show-nav-bar{
-        display: none;
-    }
 }
 
 /* Large devices (desktops, 992px and up) */
