@@ -16,7 +16,7 @@
         <div class="container-fluid px-4">
             <a class="navbar-brand pt-3" href="/">
                 <h2 class="text-primary">
-                    {{title}}
+                    MLH Fellow
                 </h2>
             </a>
             <!-- Nav bar row-display -->
@@ -46,7 +46,7 @@
                 </button>
 
                 <!-- Side Nav logic -->
-                <div class="offcanvas offcanvas-end"  tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas offcanvas-end"  tabindex="-1" id="offcanvasNavbar"  data-bs-scroll="true"  aria-labelledby="offcanvasNavbarLabel">
                     <!-- Header -->
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
@@ -56,9 +56,9 @@
                     </div>
                     <!-- Body -->
                     <div class="offcanvas-body">
-                        <ul class="navbar-nav gap-1" >
+                        <ul class="navbar-nav navbar-nav justify-content-end flex-grow-1 gap-1" >
                             <li class="nav-item">
-                                <a class="nav-link" href="/">Home</a>
+                                <a class="nav-link active" aria-current="page" href="/">Home</a>
                                 <!-- add dropdown -->
                             </li>
                             <li class="nav-item">
