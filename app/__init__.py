@@ -5,7 +5,7 @@ from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map
 
 load_dotenv()
-app = Flask(__name__, template_folder=".")
+app = Flask(__name__)
 
 GoogleMaps(app, key=os.getenv("GOOGLEMAPSAPIKEY"))
 
