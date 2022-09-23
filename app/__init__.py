@@ -7,7 +7,7 @@ import json
 load_dotenv()
 app = Flask(__name__)
 
-GoogleMaps(app, key=os.getenv("GOOGLEMAPSAPIKEY"))
+os.getenv("API_KEY") 
 
 @app.route('/')
 def landingPage():
@@ -37,12 +37,12 @@ def hobbiesPage():
     return render_template('hobbies.html', title="MLH Fellow - Hobbies", url=os.getenv("URL"), **context)
 
 #Location route
-@app.route("/locations/<location>")
-def mapview(location):
+@app.route("/locations/<name>")
+def mapview(name):
     data = load_profiles_from_json('locationData.json')
-    if location in data:
-        info = data[location]
-        return render_template('locations.html', title="MLH Fellow - Locations",location=location, info=info, url=os.getenv("URL"), API_KEY=os.getenv("API_KEY"))
+    if name in data:
+        info = data[name]
+        return render_template('locations.html', title="MLH Fellow - Locations",name=name, info=info, url=os.getenv("URL"), API_KEY=os.getenv("API_KEY"))
     else:
         return landingPage()
     

@@ -8,26 +8,27 @@
                 <script>
                     let countries = [];
                 </script>
-                {% for location in info['location'] %}
+                {% for place in info['places'] %}
                 <script>
                     countries.push({
-                    lat: "{{ location['lat'] }}",
-                    long: "{{ location['long'] }}"
+                    lat: "{{ place['lat'] }}",
+                    long: "{{ place['long'] }}"
                     });
+                    console.log(countries)
                 </script>
                 {% endfor %}
                 <div id="googleMap"></div>
                 <script src="../static/scripts/maps.js">
                 </script>
-                <script src="https://maps.googleapis.com/maps/api/js?key={{ APIKEY }}&callback=profileMap"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key={{ API_KEY }}&callback=profileMap"></script>
             </div>
             <div class="card-footer text-muted">
                 <!-- List all countries -->
-                {% for location in info['location'] %}
+                {% for places in info['places'] %}
                 {% if loop.last%}
-                <p class="card-text" style="display:inline">{{ location['country'] }} </p>
+                <p class="card-text" style="display:inline">{{ places['country'] }} </p>
                 {% else %}
-                <p class="card-text" style="display:inline">{{ location['country'] }}, </p>
+                <p class="card-text" style="display:inline">{{ places['country'] }}, </p>
                 {% endif %}
                 {% endfor %}
                 <br>
