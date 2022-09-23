@@ -27,6 +27,16 @@ body {
       );
 }
 
+.card-header{
+    font-size: var(--fs-xl);
+    text-align: center;
+}
+
+#googleMap {
+    width: 100%;
+    height: 40vh;
+    border-radius: 3px;
+}
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 320px) {
 }
