@@ -5,9 +5,31 @@ from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__)
 
+educationData = [
+    {
+        "school_name": "Harvard University",
+        "school_img": "/static/img/education-imgs/aerial-harvard.jpg",
+        "degree": "B.S. in Computer Science"
+    },
+    {
+        "school_name": "Massachussets Institute of Technology",
+        "school_img": "/static/img/education-imgs/MIT-campus.jpg",
+        "degree": "M.S. in Computer Science"
+    },
+    {
+        "school_name": "Major League Hacking | MLH Fellowship",
+        "school_img": "/static/img/education-imgs/mlh-logo-color.png",
+        "degree": "PHD in Hacking"
+    },
+]
+
+
 @app.route('/')
 def landingPage():
-    return render_template('landingPage.html', title="MLH Fellow", url=os.getenv("URL"))
+    context = {
+        "educationData": educationData
+    }
+    return render_template('landingPage.html', title="MLH Fellow", url=os.getenv("URL"), **context)
 
 # Hobbies data
 hobbyData = [
