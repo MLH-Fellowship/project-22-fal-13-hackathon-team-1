@@ -1,0 +1,10 @@
+{
+	"location": [
+		{ "country": "Canada", "lat": 45.421532, "long": -75.697189 },
+		{ "country": "Argentina", "lat": -34.603683, "long": -58.381557 },
+		{ "country": "Mexico", "lat": 19.432608, "long": -99.133209 },
+		{ "country": "US", "lat": 38.9071923, "long": -77.0368707 },
+		{ "country": "Brazil", "lat": -15.793889, "long": -47.882778 }
+	]
+}
+

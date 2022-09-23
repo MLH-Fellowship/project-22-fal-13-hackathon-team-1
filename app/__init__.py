@@ -1,8 +1,8 @@
 import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
-from flask_googlemaps import GoogleMaps
-from flask_googlemaps import Map
+from flask_googlemaps import GoogleMaps, Map, icons
+import json
 
 load_dotenv()
 app = Flask(__name__)
@@ -36,34 +36,20 @@ def hobbiesPage():
     }
     return render_template('hobbies.html', title="MLH Fellow - Hobbies", url=os.getenv("URL"), **context)
 
-
-
-@app.route("/locations")
-def mapview():
-    #GoogleMaps Data
-    mymap = Map(
-        identifier="view-side",
-        lat=37.4419,
-        lng=-122.1419,
-        markers=[(37.4419, -122.1419)]
-    )
-    sndmap = Map(
-        identifier="sndmap",
-        lat=37.4419,
-        lng=-122.1419,
-        markers=[
-          {
-             'icon': 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-             'lat': 37.4419,
-             'lng': -122.1419,
-             'infobox': "<b>Hello World</b>"
-          },
-          {
-             'icon': 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-             'lat': 37.4300,
-             'lng': -122.1400,
-             'infobox': "<b>Hello World from other place</b>"
-          }
-        ]
-    )
-    return render_template('locations.html', title="MLH Fellow - Locations", url=os.getenv("URL"), mymap=mymap, sndmap=sndmap)
+#Location route
+@app.route("/locations/<location>")
+def mapview(location):
+    data = load_profiles_from_json('locationData.json')
+    if location in data:
+        info = data[location]
+        return render_template('locations.html', title="MLH Fellow - Locations",location=location, info=info, url=os.getenv("URL"), API_KEY=os.getenv("API_KEY"))
+    else:
+        return landingPage()
+    
+def load_profiles_from_json(filename) -> dict:
+    # Get the relative path for the JSON data
+    path = f'{os.getcwd()}/{filename}'
+    # Open the file and return its parsed contents
+    # UTF-8 encoding is used to parse apostrophes correctly
+    with open(path, "r", encoding='utf8') as file:
+        return json.load(file)

@@ -1,0 +1,38 @@
+{% extends "pageOverlay.html" %}
+{% block content %}
+<div class="map">
+    <div class="card border-light mb-3">
+        <div class="card-header">Countries I've Visited</div>
+            <div class="card-body">
+                <!-- Map Scripts -->
+                <script>
+                    let countries = [];
+                </script>
+                {% for location in info['location'] %}
+                <script>
+                    countries.push({
+                    lat: "{{ location['lat'] }}",
+                    long: "{{ location['long'] }}"
+                    });
+                </script>
+                {% endfor %}
+                <div id="googleMap"></div>
+                <script src="../static/scripts/maps.js">
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key={{ APIKEY }}&callback=profileMap"></script>
+            </div>
+            <div class="card-footer text-muted">
+                <!-- List all countries -->
+                {% for location in info['location'] %}
+                {% if loop.last%}
+                <p class="card-text" style="display:inline">{{ location['country'] }} </p>
+                {% else %}
+                <p class="card-text" style="display:inline">{{ location['country'] }}, </p>
+                {% endif %}
+                {% endfor %}
+                <br>
+            </div>
+        </div>
+  </div>
+</div>
+{% endblock content %}
