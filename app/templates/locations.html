@@ -8,11 +8,11 @@
                 <script>
                     let countries = [];
                 </script>
-                {% for place in info['places'] %}
+                {% for place in locationData %}
                 <script>
                     countries.push({
-                    lat: "{{ place['lat'] }}",
-                    long: "{{ place['long'] }}"
+                    lat: "{{ place.lat }}",
+                    long: "{{ place.long }}"
                     });
                     console.log(countries)
                 </script>
@@ -24,11 +24,11 @@
             </div>
             <div class="card-footer text-muted">
                 <!-- List all countries -->
-                {% for places in info['places'] %}
+                {% for places in locationData %}
                 {% if loop.last%}
-                <p class="card-text" style="display:inline">{{ places['country'] }} </p>
+                <p class="card-text" style="display:inline">{{ places.country }} </p>
                 {% else %}
-                <p class="card-text" style="display:inline">{{ places['country'] }}, </p>
+                <p class="card-text" style="display:inline">{{ places.country }}, </p>
                 {% endif %}
                 {% endfor %}
                 <br>
