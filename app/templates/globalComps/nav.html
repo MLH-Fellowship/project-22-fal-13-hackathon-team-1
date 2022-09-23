@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../static/styles/main.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"/>
+
+    <title>{%block title %}{{title}}{% endblock %}</title>
+</head>
+
+<body class="container w-100">
+    <nav class="navbar w-100 navbar-expand-md fw-semibold" style="height: 70px;">
+            <a class="navbar-brand pt-3" href="/">
+                <h2 class="text-primary fw-bold">
+                    MLH Fellow
+                </h2>
+            </a>
+
+            <!-- Button for side nav -->
+            <button class="navbar-toggler" type="button" 
+            data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasMd" aria-controls="navbarOffcanvasMd">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Nav bar row-display -->
+            <div class="offcanvas offcanvas-end navSideBar" tabindex="-1" id="navbarOffcanvasMd"  data-bs-scroll="true"  aria-labelledby="navbarOffcanvasMdLabel">
+                <!-- Header -->
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="navbarOffcanvasMdLabel">
+                        Navigation
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <!-- Body -->
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 gap-3" >
+                        <li class="nav-item" >
+                            <a class="nav-link" href="/" >Home</a>
+                            <!-- add dropdown -->
+                        </li>
+                        <li class="nav-item" data-bs-dismiss="offcanvas">
+                            <a class="nav-link" href="/hobbies">Hobbies</a>
+                        </li>
+                        <li class="nav-item" data-bs-dismiss="offcanvas">
+                            <a class="nav-link" href="/experience">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/locations">Locations</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+
+    <script>
+        // Let sidenavbar work
+        //TEMPORARY FIX
+        const navBtn = document.getElementsByClassName("navbar-toggler")
+        const sideNavBar = document.getElementsByClassName("navSideBar")
+        console.log(navBtn, sideNavBar)
+        navBtn[0].addEventListener('click', function(){
+            sideNavBar[0].classList.add("show");
+            console.log("changed!");
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{% block aboutMe %}
+<section class="container-fluid my-5" style="min-height: 700px;" id="aboutMe">
+	<h1 class="text-center mt-5 mb-5">Education</h1>
+	<div class="container">
+        {% for education in educationData %}
+		<div class="col-sm mb-5">
+			<div class="col-sm text-center">
+				<img
+					class="rounded border border-5 border-primary"
+                    style="width: 80vw; max-width: 600px; height:auto;"
+					src={{education.school_img}}
+					alt="image of current school"
+				/>
+			</div>
+			<p class="text-center mt-4 fw-bold" style="font-size: 20pt;">{{education.school_name}}</p>
+            <p class="text-center fw-semibold" style="font-size: 15pt;">{{education.degree}}</p>
+		</div>
+        {% endfor %}
+	</div>
+</section>
+{% endblock %}
