@@ -56,19 +56,20 @@ def hobbiesPage():
         "hobbyData": hobbyData
     }
     return render_template('hobbies.html', title="MLH Fellow - Hobbies", url=os.getenv("URL"), **context)
+
+#Location Data
 locationData = [
     {"country": "Canada", "lat": 45.421532, "long": -75.697189},
-    {"country": "Argentina", "lat": -34.603683, "long": -58.381557},
     {"country": "Mexico", "lat": 19.432608, "long": -99.133209},
     {"country": "US", "lat": 38.9071923, "long": -77.0368707},
-    {"country": "Brazil", "lat": -15.793889, "long": -47.882778},
-    {"country": "Panama", "lat": 8.983333, "long": -79.516670},
-    {"country": "Dominican Republic", "lat": 18.483402, "long": -69.929611},
-    {"country": "Jamaica", "lat": 18.017874, "long": -76.809904},
-    {"country": "Paraguay", "lat": -25.263740, "long": -57.575926},
     {"country": "UK", "lat": 51.509865, "long": -0.118092},
     {"country": "France", "lat": 48.864716, "long": 2.349014},
-    {"country": "Spain", "lat": 40.416775, "long": -3.703790}
+    {"country": "Spain", "lat": 40.416775, "long": -3.703790},
+    {"country": "Japan", "lat": 36.2048, "long": 138.2529},
+    {"country": "Tunisia", "lat": 33.8869, "long": 9.5375},
+    {"country": "South Korea", "lat": 35.9078, "long": 127.7669},
+    {"country": "Belize", "lat": 17.1899, "long": 88.4976},
+    {"country": "Guatemala", "lat": 15.7835, "long": 90.2308},
 ]
 
 #Location route
