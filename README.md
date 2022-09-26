@@ -26,13 +26,14 @@ The portfolio template consists of 3 main components:
 * A Google API map that renders points that the user has visited
 
 # Technologies used in the project
-The Python microframework Flask
-HTML/CSS and Bootstrap
-Jinja for templating 
-JavaScript for the responsive navigation and map creation
-Google Maps API in JavaScript to mark locations visited in each profile page
+* The Python microframework Flask
+* HTML/CSS and Bootstrap
+* Jinja for templating 
+* JavaScript for the responsive navigation and map creation
+* Google Maps API in JavaScript to mark locations visited in each profile page
 
 # File Structure
+```
 main
 │   README.md                               # Explains this respository
 |   LICENSE.md                              # Details of this project's MIT license
@@ -69,10 +70,15 @@ main
         |   locations.html                 # Template that displays the Google Map
         |   pageOverlay.html               # Template for overlays in other pages
         |   landingPage.html               # Template that displays the landingPage
-        
+ ```       
 
 ## Installation
+Using the command line, clone the repo on your machine
+```
+git clone <remote url copied from Github>
+cd <repo directory name>
 
+```
 Make sure you have python3 and pip installed
 
 Create and activate virtual environment using virtualenv
@@ -108,7 +114,6 @@ You should get a response like this in the terminal:
 You'll now be able to access the website at `localhost:5000` or `127.0.0.1:5000` in the browser! 
 
 *Note: The portfolio site will only work on your local machine while you have it running inside of your terminal. 
-
 
 
 ## Contributing
