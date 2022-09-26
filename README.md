@@ -126,3 +126,6 @@ Please make sure to update tests as appropriate.
 
 ![HobbiesPage-2](https://user-images.githubusercontent.com/20806815/192337012-5314882b-5066-4e2d-b4d7-27b222833d10.png)
 ![WortExperiencePage-3](https://user-images.githubusercontent.com/20806815/192337103-869debca-0153-4ccc-83a7-bee08c21158f.png)
+
+# Inspiration
+https://www.figma.com/file/xvevtcKbVCcdJ2yi86aov3/portfolio-page?node-id=0%3A1
