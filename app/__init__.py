@@ -10,19 +10,24 @@ app = Flask(__name__)
 os.getenv("API_KEY") 
 educationData = [
     {
-        "school_name": "Harvard University",
-        "school_img": "/static/img/education-imgs/aerial-harvard.jpg",
-        "degree": "B.S. in Computer Science"
-    },
-    {
-        "school_name": "Massachussets Institute of Technology",
-        "school_img": "/static/img/education-imgs/MIT-campus.jpg",
-        "degree": "M.S. in Computer Science"
-    },
-    {
-        "school_name": "Major League Hacking | MLH Fellowship",
+        "school_name": "Major Leauge Hacking | MLH Fellowship",
         "school_img": "/static/img/education-imgs/mlh-logo-color.png",
-        "degree": "PHD in Hacking"
+        "degree": "Certificate: Site Realiability Software Engineering"
+    },
+    {
+        "school_name": "Techtonica",
+        "school_img": "/static/img/education-imgs/techtonica.png",
+        "degree": "Certificate: Software Engineering"
+    },
+    {
+        "school_name": "University Massachussetts, Lowell",
+        "school_img": "/static/img/education-imgs/uMassLowell.png",
+        "degree": "Bachelor of Science: Information Technology"
+    },
+    {
+        "school_name": "California State University, Chico",
+        "school_img": "/static/img/education-imgs/chicoState3.jpg",
+        "degree": "Bachelor of Science: Parks and Natural Resources"
     },
 ]
 
