@@ -41,18 +41,12 @@ def landingPage():
 
 # Hobbies data
 hobbyData = [
-    {"imgSrc": "/static/img/logo.jpg",
-    "name": "Photography", 
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis orci nulla, id dignissim diam vulputate a. Ut ullamcorper, ex et elementum posuere, arcu ante vulputate risus, non aliquet augue metus eget enim. Sed auctor non nibh eget porttitor. Aliquam consectetur ipsum eget mi tempus tempus. "},
-    {"imgSrc": "/static/img/logo.jpg", 
-    "name": "Hiking", 
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis orci nulla, id dignissim diam vulputate a. Ut ullamcorper, ex et elementum posuere, arcu ante vulputate risus, non aliquet augue metus eget enim. Sed auctor non nibh eget porttitor. Aliquam consectetur ipsum eget mi tempus tempus. "},
-    {"imgSrc": "/static/img/logo.jpg", 
-    "name": "Dancing", 
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis orci nulla, id dignissim diam vulputate a. Ut ullamcorper, ex et elementum posuere, arcu ante vulputate risus, non aliquet augue metus eget enim. Sed auctor non nibh eget porttitor. Aliquam consectetur ipsum eget mi tempus tempus. "},
-    {"imgSrc": "/static/img/logo.jpg", 
-    "name": "Programming", 
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis orci nulla, id dignissim diam vulputate a. Ut ullamcorper, ex et elementum posuere, arcu ante vulputate risus, non aliquet augue metus eget enim. Sed auctor non nibh eget porttitor. Aliquam consectetur ipsum eget mi tempus tempus. "}
+    {"imgSrc": "/static/img/rivers.jpg",
+    "name": "Rafting", 
+    "description": "Rivers hold a special place in my heart. My favorite rivers are the Trinity, American, Sacramento, Yuba and the Yampa River in Utah"},
+    {"imgSrc": "/static/img/backpacking.jpg", 
+    "name": "Backpacking", 
+    "description": "The wilderness is a place that I go to rejuvenate. Naturalist John Muir best summed it up in his writings, “Climb the mountains and get their good tidings. Nature's peace will flow into you as sunshine flows into trees. The winds will blow their own freshness into you, and the storms their energy, while cares will drop away from you like the leaves of Autumn.”"}
 ]
 
 @app.route('/hobbies')
@@ -67,12 +61,6 @@ locationData = [
     {"country": "Canada", "lat": 45.421532, "long": -75.697189},
     {"country": "Mexico", "lat": 19.432608, "long": -99.133209},
     {"country": "US", "lat": 38.9071923, "long": -77.0368707},
-    {"country": "UK", "lat": 51.509865, "long": -0.118092},
-    {"country": "France", "lat": 48.864716, "long": 2.349014},
-    {"country": "Spain", "lat": 40.416775, "long": -3.703790},
-    {"country": "Japan", "lat": 36.2048, "long": 138.2529},
-    {"country": "Tunisia", "lat": 33.8869, "long": 9.5375},
-    {"country": "South Korea", "lat": 35.9078, "long": 127.7669},
     {"country": "Belize", "lat": 17.1899, "long": 88.4976},
     {"country": "Guatemala", "lat": 15.7835, "long": 90.2308},
 ]
@@ -94,13 +82,13 @@ experienceData = [
     "date_worked": "Sep 2022 - Dec 2022", 
     "location": "United States",
     "description": [
-        "Collaborated with some incredible people, amazing pod leader, and great mentor company.", 
+        "Collaborated with pod members to create a portfolio template." 
         "Worked on a portfolio project, creating a reusable template for the future.", 
         "Used Python, Flask and Jinja, Bootstrap for styling "
         ],
     },
-    {"company_img": "static/img/MLBLogo.png",
-    "company_name": "Major League Baseball",
+    {"company_img": "static/img/indeed.png",
+    "company_name": "Indeed.com",
     "job_title": "Site-Reliability Engineer",
     "position_type": "Full-time",
     "date_worked": "Sep 2022 - Present", 
@@ -111,14 +99,14 @@ experienceData = [
         "Used Python, Flask and Jinja, Bootstrap for styling "
         ],
     },
-    {"company_img": "static/img/logo-Meta.png",
-    "company_name": "Meta",
-    "job_title": "Production Engineer",
+    {"company_img": "static/img/techtonica.jpg",
+    "company_name": "Techtonica",
+    "job_title": "Software Engineer Apprentice",
     "position_type": "Full-time",
-    "date_worked": "Jun 2020 - Aug 2022", 
-    "location": "Menlo Park, California",
+    "date_worked": "Jul 2021 - Dec 2021", 
+    "location": "Remote (based in San Francisco)",
     "description": [
-        "Collaborated with some incredible people, amazing pod leader, and great mentor company.", 
+        "Learned new technologies under a deadline, developed and deployed full-stack applications using PostgreSQl, Express, React, Node.", 
         "Worked on a portfolio project, creating a reusable template for the future.", 
         "Used Python, Flask and Jinja, Bootstrap for styling "
         ],
