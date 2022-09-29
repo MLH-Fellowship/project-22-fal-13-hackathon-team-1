@@ -1,15 +1,15 @@
 # Site Realiability Engineering - Week 1 - Template Portfolio Site
 
-In week 1, we made a reusable, responsive, scalable template portfolio. We learned new technologies in Web Development (Flask, Jinja, Google Maps API), we also implemented GitHub best practices to collaborate as a team.
+In week 2 of the MLH Site Reliability Engineering program, we made used the portfolio templates that we created in week one and made our own personal portfolio. 
 
 # Badges
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/MLH-Fellowship/project-22-fal-13-hackathon-team-1?style=plastic)
 ![GitHub repo size](https://img.shields.io/github/repo-size/MLH-Fellowship/project-22-fal-13-hackathon-team-1?style=plastic)
 
 # Description
-This is a portfolio template which can be easily reused and personalized. 
+This is a portfolio showcases tells a little about me, my hobbies, work experience, locations that I've traveled to, and my web projects.  
 
-The portfolio template consists of 3 main components:
+The portfolio template consists of 5 main components:
 
 ###### Landing page  
 * Hero section with name, call to action button and image
@@ -24,6 +24,9 @@ The portfolio template consists of 3 main components:
 
 ###### Locations page
 * A Google API map that renders points that the user has visited
+
+###### Projects showcase page
+* Cards that showcase projects that I've built
 
 # Technologies used in the project
 * The Python microframework Flask
