@@ -1,4 +1,4 @@
-# Site Realiability Engineering - Week 1 - Template Portfolio Site
+# Tara Larsen - Week 2 - Personal Portfolio Site
 
 In week 2 of the MLH Site Reliability Engineering program, we made used the portfolio templates that we created in week one and made our own personal portfolio. 
 
