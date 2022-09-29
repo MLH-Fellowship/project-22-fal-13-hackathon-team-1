@@ -2,7 +2,6 @@ import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 from flask_googlemaps import GoogleMaps, Map, icons
-import json
 
 load_dotenv()
 app = Flask(__name__)
@@ -43,7 +42,7 @@ def landingPage():
 hobbyData = [
     {"imgSrc": "/static/img/rivers.jpg",
     "name": "Rafting", 
-    "description": "Rivers hold a special place in my heart. My favorite rivers are the Trinity, American, Sacramento, Yuba and the Yampa River in Utah"},
+    "description": "Rivers hold a special place in my heart. My favorite rivers are the Trinity, American, Sacramento, Yuba and the Yampa River in Utah. I love exploring the geology of the river."},
     {"imgSrc": "/static/img/backpacking.jpg", 
     "name": "Backpacking", 
     "description": "The wilderness is a place that I go to rejuvenate. Naturalist John Muir best summed it up in his writings, “Climb the mountains and get their good tidings. Nature's peace will flow into you as sunshine flows into trees. The winds will blow their own freshness into you, and the storms their energy, while cares will drop away from you like the leaves of Autumn.”"}
@@ -58,11 +57,11 @@ def hobbiesPage():
 
 #Location Data
 locationData = [
-    {"country": "Canada", "lat": 45.421532, "long": -75.697189},
+    {"country": "Canada", "lat": 53.7267, "long": -127.6476},
     {"country": "Mexico", "lat": 19.432608, "long": -99.133209},
-    {"country": "US", "lat": 38.9071923, "long": -77.0368707},
-    {"country": "Belize", "lat": 17.1899, "long": 88.4976},
-    {"country": "Guatemala", "lat": 15.7835, "long": 90.2308},
+    {"country": "US", "lat": 36.7783, "long": -119.4179},
+    {"country": "Belize", "lat": 17.1899, "long": -88.4976},
+    {"country": "Guatemala", "lat": 15.7835, "long": -90.2308}
 ]
 
 #Location route
@@ -82,21 +81,20 @@ experienceData = [
     "date_worked": "Sep 2022 - Dec 2022", 
     "location": "United States",
     "description": [
-        "Collaborated with pod members to create a portfolio template." 
-        "Worked on a portfolio project, creating a reusable template for the future.", 
-        "Used Python, Flask and Jinja, Bootstrap for styling "
+        "Collaborated with pod members to create a portfolio template using Flask, Jinja and Bootstrap.",
+        "Deployed personal portfolio on virtual private server using Linux"
         ],
     },
     {"company_img": "static/img/indeed.png",
     "company_name": "Indeed.com",
-    "job_title": "Site-Reliability Engineer",
+    "job_title": "Software Developer Intern",
     "position_type": "Full-time",
-    "date_worked": "Sep 2022 - Present", 
-    "location": "New York, New York",
+    "date_worked": "Jan 2022 - Jul 2022", 
+    "location": "Remote (based in San Francisco)",
     "description": [
-        "Collaborated with some incredible people, amazing pod leader, and great mentor company.", 
-        "Worked on a portfolio project, creating a reusable template for the future.", 
-        "Used Python, Flask and Jinja, Bootstrap for styling "
+        "Completed production-level tickets using React and TypeScript", 
+        "Created and refactored unit and integration tests", 
+        "Collaborated with cross-functional team members on optimizing integration tests, peer code review and team processes"
         ],
     },
     {"company_img": "static/img/techtonica.jpg",
@@ -107,8 +105,20 @@ experienceData = [
     "location": "Remote (based in San Francisco)",
     "description": [
         "Learned new technologies under a deadline, developed and deployed full-stack applications using PostgreSQl, Express, React, Node.", 
-        "Worked on a portfolio project, creating a reusable template for the future.", 
-        "Used Python, Flask and Jinja, Bootstrap for styling "
+        "Collaborated with teammates on debugging code, peer code review and implementing new features", 
+        "Led team meetings of 12+ coworkers and facilitated daily agenda items "
+        ],
+    },
+    {"company_img": "static/img/pr.jpg",
+    "company_name": "Pleasant Ridge School District",
+    "job_title": "Teacher",
+    "position_type": "Full-time",
+    "date_worked": "Aug 2000 - Jun 2014", 
+    "location": "Grass Valley, California",
+    "description": [
+        "Science department chair (August 2010 - June 2014)", 
+        "Designed and implemented performance improvement plans for students in consultation with parents and administrative staff", 
+        "Contributed to improving statewide standardized testing scores for 8th grade science by 7% during tenure. "
         ],
     },
 ]
