@@ -23,7 +23,11 @@ body {
 }
 
 .gradient{
-    background-image: linear-gradient(
+    background: -webkit-linear-gradient(left,#51c0f3 20%, #71b6df 40%, #948df8 80%);
+}
+
+.gradient-text{
+    /* background-image: linear-gradient(
         85deg,
         hsl(216deg 98% 52%) 0%,
         hsl(210deg 100% 50%) 14%,
@@ -34,8 +38,53 @@ body {
         hsl(221deg 85% 79%) 90%,
         hsl(232deg 82% 86%) 97%,
         hsl(245deg 78% 91%) 100%
-      );
+    ); */
+    background: -webkit-linear-gradient(left,#21b2f5 20%, #67baeb 40%, #948df7 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+.gradient-text:hover, .gradient:hover{
+    background-size: 200% 200%;
+    animation: gradient-animation 2s ease infinite;
+}
+
+
+/* GRADIENT TEXT ANIMATIONS */
+@-webkit-keyframes gradient-animation {
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+}
+@-moz-keyframes gradient-animation {
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+}
+@keyframes gradient-animation {
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+}
+
 
 .card-header{
     font-size: var(--fs-xl);
@@ -53,6 +102,12 @@ body {
 @media (min-width: 310px) {
     .text-dir-change{
         text-align: center;
+    }
+    .text-large{
+        font-size: 40px;
+    }
+    .text-small{
+        font-size: 20px;
     }
 }
 
@@ -73,6 +128,12 @@ body {
     }
     .show-nav-bar{
         display:block;
+    }
+    .text-large{
+        font-size: 55px;
+    }
+    .text-small{
+        font-size: 28px;
     }
 
 }
