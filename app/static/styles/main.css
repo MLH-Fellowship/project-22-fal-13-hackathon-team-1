@@ -1,15 +1,25 @@
+/* COLOR THEME VARIABLES - use "var(`name of variable`)" to access */
+:root {
+    --brand_color: #0EA5E9; 
+    --dark_color: #0F172A;
+    --mid_color: #CBD5E1;
+    --light_color: #F8FAFC;
+}
+
+
 p, h1, h2, h3, h4, h5, h6, button {
     font-family: "Arial", serif;
 }
 
+
 body {
-    background-color: #F8FAFC;
+    background-color: var(--light_color);
     background-size: cover;
     width: auto; 
     overflow-x: hidden;
     font-family: "Arial", serif;
     margin: 0px;
-    color: #0F172A;
+    color: var(--dark_color);
 }
 
 .gradient{
@@ -37,13 +47,20 @@ body {
     height: 40vh;
     border-radius: 3px;
 }
+
+
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 320px) {
+@media (min-width: 310px) {
+    .text-dir-change{
+        text-align: center;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-
+    .text-dir-change{
+        text-align: left;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
