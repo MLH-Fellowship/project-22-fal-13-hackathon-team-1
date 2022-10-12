@@ -73,16 +73,13 @@
     ],
 
     "locationData": [
-        {"country": "Canada", "lat": 45.421532, "long": -75.697189},
-        {"country": "Mexico", "lat": 19.432608, "long": -99.133209},
-        {"country": "US", "lat": 38.9071923, "long": -77.0368707},
-        {"country": "UK", "lat": 51.509865, "long": -0.118092},
-        {"country": "France", "lat": 48.864716, "long": 2.349014},
-        {"country": "Spain", "lat": 40.416775, "long": -3.703790},
+        {"country": "Canada", "lat": 51.2538, "long": 85.3232},
+        {"country": "California", "lat": 36.7783, "long": -119.4179},
+        {"country": "New York", "lat": 40.7128, "long": -74.0060},
+        {"country": "Las Vegas", "lat": 36.1716, "long":  -115.1391},
         {"country": "Japan", "lat": 36.2048, "long": 138.2529},
-        {"country": "Tunisia", "lat": 33.8869, "long": 9.5375},
         {"country": "South Korea", "lat": 35.9078, "long": 127.7669},
-        {"country": "Belize", "lat": 17.1899, "long": 88.4976},
-        {"country": "Guatemala", "lat": 15.7835, "long": 90.2308}
+        {"country": "Norway", "lat": 59.9139, "long": 10.7522}
     ]
-}
+} 
+
