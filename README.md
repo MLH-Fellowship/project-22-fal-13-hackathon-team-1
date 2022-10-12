@@ -1,41 +1,84 @@
-# Production Engineering - Week 1 - Portfolio Site
+# Site Realiability Engineering - Week 1 - Template Portfolio Site
 
-Welcome to the MLH Fellowship! During Week 1, you'll be working with Flask to build a portfolio site. This site will be the foundation for activities we do in future weeks so spend time this week making it your own and reflect your personality!
+In week 1, we made a reusable, responsive, scalable template portfolio. We learned new technologies in Web Development (Flask, Jinja, Google Maps API), we also implemented GitHub best practices to collaborate as a team.
 
-## Tasks
+# Badges
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/MLH-Fellowship/project-22-fal-13-hackathon-team-1?style=plastic)
+![GitHub repo size](https://img.shields.io/github/repo-size/MLH-Fellowship/project-22-fal-13-hackathon-team-1?style=plastic)
 
-Once you've got your portfolio downloaded and running using the instructions below, you should attempt to complete the following tasks.
+# Description
+This is a portfolio template which can be easily reused and personalized. 
 
-For each of these tasks, you should create an [Issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) and work on them in a new [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches). When the task has been completed, you should open a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) and get another fellow in your pod to give you feedback before merging it in.
+The portfolio template consists of 3 main components:
 
-*Note: Make sure to include a link to the Issue you're working on inside of your Pull Request so your reviewer knows what you're working on!*
+###### Landing page  
+* Hero section with name, call to action button and image
+* About Me section with image and text area
+* Education section with school image, degree, major
 
-### GitHub Tasks
-- [x] Create Issues for each task below
-- [x] Work on each task in a new branch
-- [x] Open a Pull Request when a task is finished to get feedback
+###### Hobbies page 
+* Cards with title, image and text area
 
-### Portfolio Tasks
-- [x] Add a photo of yourself to the website
-- [x] Add an "About youself" section to the website.
-- [x] Add your previous work experiences
-- [x] Add your hobbies (including images)
-- [x] Add your current/previous education
-- [x] Add a map of all the cool locations/countries you visited
+###### Work Experience page
+* Cards with title, image and text area
 
-### Flask Tasks
-- [x] Get your Flask app running locally on your machine using the instructions below.
-- [x] Add a template for adding multiple work experiences/education/hobbies using [Jinja](https://jinja.palletsprojects.com/en/3.0.x/api/#basics)
-- [x] Create a new page to display hobbies.
-- [x] Add a menu bar that dynamically displays other pages in the app
+###### Locations page
+* A Google API map that renders points that the user has visited
 
+# Technologies used in the project
+* The Python microframework Flask
+* HTML/CSS and Bootstrap
+* Jinja for templating 
+* JavaScript for the responsive navigation and map creation
+* Google Maps API in JavaScript to mark locations visited in each profile page
 
-## Getting Started
-
-You need to do all your work here.
+# File Structure
+```
+main
+│   README.md                               # Explains this respository
+|   LICENSE.md                              # Details of this project's MIT license
+│   .gitignore                              # Files to be ignored by git
+|   .python-version                         # Python version used to build the project
+|   .env                                    # Environmental variables for API key and URL
+|   requirements.txt                        # Requirements for Python dependencies to install using pip
+│
+└───app
+    │   __init__.py                         # The Python init file that runs upon executing "flask run"
+    │
+    └───static
+    |   └───fonts
+    |   |   |   flux-regular.otf            # The same font style used by Python (free to use)
+    |   |
+    |   └───img
+    |   |   |   (all images for website)    # Various images used in the project
+    |   |
+    |   └───scripts
+    |   |   |   maps.js                     # Script that loads the Google Maps API into the DO
+    |   |
+    |   └───styles
+    |   |   |   main.css                   # Custom styles for all pages
+    └───templates
+        |___ globaComps 
+              | footer.html                # Displays copyright and social links
+              | nav.html                   # Responsive navigation menu
+        |___ landingPage
+              | aboutMe.html               # Template that displays about me information
+              | education.html             # Template that displays education section  
+              | hero.html                  # Template that hero section  
+        |   experience.html                # Template for the experience page
+        |   hobbies.html                   # Template for that displays the hobbies page
+        |   locations.html                 # Template that displays the Google Map
+        |   pageOverlay.html               # Template for overlays in other pages
+        |   landingPage.html               # Template that displays the landingPage
+ ```       
 
 ## Installation
+Using the command line, clone the repo on your machine
+```
+git clone <remote url copied from Github>
+cd <repo directory name>
 
+```
 Make sure you have python3 and pip installed
 
 Create and activate virtual environment using virtualenv
@@ -70,10 +113,19 @@ You should get a response like this in the terminal:
 
 You'll now be able to access the website at `localhost:5000` or `127.0.0.1:5000` in the browser! 
 
-*Note: The portfolio site will only work on your local machine while you have it running inside of your terminal. We'll go through how to host it in the cloud in the next few weeks!* 
+*Note: The portfolio site will only work on your local machine while you have it running inside of your terminal. 
 
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+# Visuals
+![LandingPage-1](https://user-images.githubusercontent.com/20806815/192336943-67042239-f4b6-4493-807b-72087fa85ce8.png)
+
+![HobbiesPage-2](https://user-images.githubusercontent.com/20806815/192337012-5314882b-5066-4e2d-b4d7-27b222833d10.png)
+![WortExperiencePage-3](https://user-images.githubusercontent.com/20806815/192337103-869debca-0153-4ccc-83a7-bee08c21158f.png)
+
+# Inspiration
+https://www.figma.com/file/xvevtcKbVCcdJ2yi86aov3/portfolio-page?node-id=0%3A1
