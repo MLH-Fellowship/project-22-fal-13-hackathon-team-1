@@ -98,3 +98,8 @@ def mapview():
         "locationData": data["locationData"]
     }
     return render_template('locations.html', title="MLH Fellow - Locations", url=os.getenv("URL"), API_KEY=os.getenv("API_KEY"),  **context)
+
+#Timeline route
+@app.route('/timeline')
+def timelinePage():
+    return render_template('timeline.html', title="MLH Fellow - Timeline", url=os.getenv("URL"))
