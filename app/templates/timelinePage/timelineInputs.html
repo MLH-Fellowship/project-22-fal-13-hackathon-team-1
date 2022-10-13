@@ -1,0 +1,81 @@
+{% block timelineInput %}
+<div style="height: 50px;">
+    <div class="alert alert-primary hidden" role="alert">
+        Created new timeline post successfully! <a href="http://localhost:5000/api/timeline_post" target="_blank" class="alert-link">Timeline Posts</a>.
+    </div>
+    <div class="alert alert-warning hidden" role="alert">
+        Failed to post. Something went wrong.
+    </div>
+</div>
+<section class="d-flex flex-column justify-content-center align-items-center">
+    <form class="mt-5 w-50" id="timeline-form">
+        <div class="row-auto input mb-4">
+            <label for="input_post_name" class="visually-hidden">Name</label>
+            <input type="text" name="name" class="form-control" id="input_post_name" placeholder="Name">
+        </div>
+        <div class="row-auto input mb-4">
+            <label for="input_post_email" class="visually-hidden">Email</label>
+            <input type="email" name="email" class="form-control" id="input_post_email" placeholder="Email Address">
+        </div>
+        <div class="row-auto input mb-4">
+            <label for="input_post_content" class="visually-hidden">Content</label>
+            <textarea class="form-control" name="content" id="input_post_content" rows="4" placeholder="Write your thoughts here..."></textarea>
+        </div>
+        <div class="row-3 mb-4">
+            <button type="submit" class="btn btn-primary mb-3">
+                Add Post
+            </button>
+        </div>
+    </form>
+</section>
+
+<script>
+    // Fetch data
+    const form = document.getElementById('timeline-form')
+    const name = document.getElementById('input_post_name')
+    const email = document.getElementById('input_post_email')
+    const content = document.getElementById('input_post_content')
+
+    const alertSuccess = document.getElementsByClassName('alert-primary')
+    const alertError = document.getElementsByClassName('alert-warning')
+    form.addEventListener('submit', (e) => {
+        //prevent reload
+        e.preventDefault();
+
+        const formData = new FormData(form)
+        const payload = new URLSearchParams(formData)
+        postSubmit(payload);
+    })
+
+    const postSubmit = (payload) => {
+        fetch('http://localhost:5000/api/timeline_post', {
+            method: 'POST',
+            body: payload,
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            alertSuccess[0].classList.remove("hidden");
+            setTimeout(() => {
+                alertSuccess[0].classList.add("hidden");
+            }, 3000);
+            // Reset input values
+            clearValues();
+        }) 
+        .catch(err => {
+            // Error handling && alert
+            console.log("ERROR: ", err)
+            alertError[0].classList.remove("hidden");
+            setTimeout(() => {
+                alertError[0].classList.add("hidden");
+            }, 3000);
+        })
+    }
+
+    const clearValues = () => {
+        name.value = ""
+        email.value = ""
+        content.value = ""
+    }
+</script>
+{% endblock %}
