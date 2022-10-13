@@ -22,6 +22,12 @@ body {
     color: var(--dark_color);
 }
 
+
+/* For hiding elements */
+.hidden{
+    display: none;
+}
+
 .gradient{
     background: -webkit-linear-gradient(left,#51c0f3 20%, #71b6df 40%, #948df8 80%);
 }
@@ -99,6 +105,7 @@ body {
     height: 40vh;
     border-radius: 3px;
 }
+
 
 
 /* Small devices (landscape phones, 576px and up) */
