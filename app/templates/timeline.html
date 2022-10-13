@@ -1,0 +1,61 @@
+{% extends "pageOverlay.html" %}
+
+{% block content %}
+<body>
+    <div class="alert alert-primary" role="alert">
+        Created new timeline post successfully! <a href="http://localhost:5000/api/timeline_post" target="_blank" class="alert-link">Timeline Posts</a>.
+    </div>
+    <section class="d-flex flex-column justify-content-center align-items-center">
+        <form class="mt-5 w-50" id="form">
+            <div class="row-auto input mb-4">
+                <label for="input_post_name" class="visually-hidden">Name</label>
+                <input type="text" class="form-control" id="input_post_name" placeholder="Name">
+            </div>
+            <div class="row-auto input mb-4">
+                <label for="input_post_email" class="visually-hidden">Email</label>
+                <input type="email" class="form-control" id="input_post_email" placeholder="Email Address">
+            </div>
+            <div class="row-auto input mb-4">
+                <label for="input_post_content" class="visually-hidden">Content</label>
+                <textarea class="form-control" id="input_post_content" rows="4" placeholder="Write your thoughts here..."></textarea>
+            </div>
+            <div class="row-3 mb-4">
+                <button type="submit" class="btn btn-primary mb-3">
+                    Add Post
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <section>
+        <ul>
+            
+        </ul>
+    </section>
+
+    <script>
+        const form = document.getElementById('form')
+        const input1 = document.getElementById('input_post_name')
+        const input2 = document.getElementById('input_post_email')
+        const input3 = document.getElementById('input_post_content')
+        const alert = document.getElementsByClassName('alert')
+        form.addEventListener('submit', (e) => {
+            //prevent reload
+            e.preventDefault();
+            let inputArr = ["name=" + input1.value, "email=" + input2.value, "content=" + input3.value]
+            let payload = inputArr.join("&")
+            console.log(payload);
+        })
+
+        const postSubmit = () => {
+            
+        }
+
+        const clearValues = () => {
+            input1.value = ""
+            input2.value = ""
+            input3.value = ""
+        }
+    </script>
+</body>
+{% endblock content %}

@@ -49,6 +49,9 @@ body {
     animation: gradient-animation 2s ease infinite;
 }
 
+.input{
+    max-width: 600px;
+}
 
 /* GRADIENT TEXT ANIMATIONS */
 @-webkit-keyframes gradient-animation {
