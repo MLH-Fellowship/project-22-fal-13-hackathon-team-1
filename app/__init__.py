@@ -100,11 +100,6 @@ def mapview():
     }
     return render_template('locations.html', title="MLH Fellow - Locations", url=os.getenv("URL"), API_KEY=os.getenv("API_KEY"),  **context)
 
-
-#fetch timeline post data
-
-# print(response, response.json())
-
 #Timeline route
 @app.route('/timeline')
 def timelinePage():
