@@ -1,11 +1,26 @@
 {% block timelinePosts %}
-<section>
-    <ul>
-        
+<section class="d-flex flex-column justify-content-center align-items-center mt-5">
+    <ul class="list-group timeline-width w-75">
+        {% for post in timelineData %}
+            {% for data in post.timeline_posts %}
+            <li class="list-group-item col w-100 border rounded my-3" >
+                <div class="d-flex row-3" style="justify-content: space-between;">
+                    <div>
+                        <img src="../../static/img/portraitPlaceholder.png" style="max-width: 40px; max-height: 40px;" />
+                        <span style="font-weight:bold;">{{data.name}} | {{data.email}}</span>
+                    </div>
+                    <div>
+                        <span>{{data.created_at}}</span>
+                    </div>
+                </div>
+                <div class="row-9 m-5">
+                    <p>
+                        {{data.content}}
+                    </p>
+                </div>
+            </li>
+            {% endfor %}
+        {% endfor %}
     </ul>
 </section>
-
-<script>
-    
-</script>
 {% endblock %}

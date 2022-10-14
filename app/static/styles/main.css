@@ -55,8 +55,12 @@ body {
     animation: gradient-animation 2s ease infinite;
 }
 
-.input{
+.input-width{
     max-width: 600px;
+}
+
+.timeline-width{
+    max-width: 800px;
 }
 
 /* GRADIENT TEXT ANIMATIONS */
