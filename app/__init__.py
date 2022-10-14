@@ -7,6 +7,7 @@ from flask_googlemaps import GoogleMaps, Map, icons
 from peewee import *
 import datetime
 from playhouse.shortcuts import model_to_dict
+import requests
 
 load_dotenv()
 app = Flask(__name__)
@@ -99,7 +100,16 @@ def mapview():
     }
     return render_template('locations.html', title="MLH Fellow - Locations", url=os.getenv("URL"), API_KEY=os.getenv("API_KEY"),  **context)
 
+
+#fetch timeline post data
+
+# print(response, response.json())
+
 #Timeline route
 @app.route('/timeline')
 def timelinePage():
-    return render_template('timeline.html', title="MLH Fellow - Timeline", url=os.getenv("URL"))
+    response = requests.get("http://localhost:5000/api/timeline_post")
+    context={
+        "timelineData": [response.json()]
+    }
+    return render_template('timeline.html', title="MLH Fellow - Timeline", url=os.getenv("URL"), **context)
