@@ -103,7 +103,7 @@ def mapview():
 #Timeline route
 @app.route('/timeline')
 def timelinePage():
-    response = requests.get("http://localhost:5000/api/timeline_post")
+    response = requests.get("http://" + os.getenv("URL") + "/api/timeline_post")
     context={
         "timelineData": [response.json()]
     }
