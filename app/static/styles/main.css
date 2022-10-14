@@ -112,7 +112,7 @@ body {
 
 
 
-/* Small devices (landscape phones, 576px and up) */
+/* Small devices (phones, 310px and up) */
 @media (min-width: 310px) {
     .text-dir-change{
         text-align: center;
@@ -123,12 +123,18 @@ body {
     .text-small{
         font-size: 20px;
     }
+    .show{
+        display: none;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .text-dir-change{
         text-align: left;
+    }
+    .show{
+        display: block;
     }
 }
 
