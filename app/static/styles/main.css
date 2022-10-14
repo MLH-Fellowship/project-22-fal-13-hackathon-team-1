@@ -22,6 +22,12 @@ body {
     color: var(--dark_color);
 }
 
+
+/* For hiding elements */
+.hidden{
+    display: none;
+}
+
 .gradient{
     background: -webkit-linear-gradient(left,#51c0f3 20%, #71b6df 40%, #948df8 80%);
 }
@@ -49,6 +55,13 @@ body {
     animation: gradient-animation 2s ease infinite;
 }
 
+.input-width{
+    max-width: 600px;
+}
+
+.timeline-width{
+    max-width: 800px;
+}
 
 /* GRADIENT TEXT ANIMATIONS */
 @-webkit-keyframes gradient-animation {
@@ -98,7 +111,8 @@ body {
 }
 
 
-/* Small devices (landscape phones, 576px and up) */
+
+/* Small devices (phones, 310px and up) */
 @media (min-width: 310px) {
     .text-dir-change{
         text-align: center;
@@ -109,12 +123,18 @@ body {
     .text-small{
         font-size: 20px;
     }
+    .show{
+        display: none;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .text-dir-change{
         text-align: left;
+    }
+    .show{
+        display: block;
     }
 }
 
