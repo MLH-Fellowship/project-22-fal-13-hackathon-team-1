@@ -103,8 +103,10 @@ def mapview():
 #Timeline route
 @app.route('/timeline')
 def timelinePage():
-    response = requests.get("http://" + os.getenv("URL") + "/api/timeline_post")
+    envURL = os.getenv("URL")
+    response = requests.get("http://" + envURL + "/api/timeline_post")
     context={
-        "timelineData": [response.json()]
+        "timelineData": [response.json()],
+        "envURL": [envURL]
     }
     return render_template('timeline.html', title="MLH Fellow - Timeline", url=os.getenv("URL"), **context)

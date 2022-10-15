@@ -27,6 +27,7 @@
             </button>
         </div>
     </form>
+    <span style="display: none;" id="envURL">{{envURL[0]}}</span>
 </section>
 
 <script>
@@ -35,6 +36,8 @@
     const name = document.getElementById('input_post_name')
     const email = document.getElementById('input_post_email')
     const content = document.getElementById('input_post_content')
+    //pass in context env url
+    const envURL = document.getElementById('envURL').innerHTML
 
     const alertSuccess = document.getElementsByClassName('alert-primary')
     const alertError = document.getElementsByClassName('alert-warning')
@@ -48,7 +51,7 @@
     })
 
     const postSubmit = (payload) => {
-        fetch('http://masayafunakoshi.duckdns.org:5000/api/timeline_post', {
+        fetch(`http://${envURL}/api/timeline_post`, {
             method: 'POST',
             body: payload,
         })
