@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#reset tmux sessions
-tmux kill-session -t portfolio
-
 #cd into project
 cd portfolio-project
 
@@ -13,13 +10,15 @@ git fetch && git reset origin/main --hard
 source python3-virtualenv/bin/activate
 pip install -r requirements.txt
 
-#Start new tmux session named "portfolio" && run flask
-tmux new-session -d -s portfolio "flask run --host=0.0.0.0"
+#ensure SQL DB is working
+sudo systemctl start mysqld.service
+sudo systemctl enable mysqld
 
-#Check if server is running
-if [[ -n $(pgrep tmux) ]]; then
-  echo "Tmux Server running successfully"
-else
-  echo "Tmux Server failed to run"
-fi
+#restart myportfolio systemd service
+        #located at /etc/systemd/system/myportfolio.service
+systemctl start myportfolio
+systemctl enable myportfolio
+
+#show status of myportfolio `start`
+systemctl status myportfolio
 
