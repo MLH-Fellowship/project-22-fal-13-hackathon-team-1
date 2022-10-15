@@ -8,4 +8,4 @@ pip3 install -r requirements.txt
 cd ..
 cd /etc/systemd/system
 systemctl daemon-reload
-systemctl restart myporfolio
+systemctl restart myportfolio
