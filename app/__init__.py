@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from flask_googlemaps import GoogleMaps, Map, icons
 from peewee import*
 import datetime
+import json
 from playhouse.shortcuts import model_to_dict
 
 load_dotenv()
@@ -158,6 +159,12 @@ def experiencePage():
     }
     return render_template('experience.html', title="MLH Fellow - Experience", url=os.getenv("URL"), **context)
 
+# timeline
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', title="MLH Fellow - Timeline", url=os.getenv("URL"))
+
+# timeline POST route 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name = request.form['name']
@@ -166,13 +173,13 @@ def post_time_line_post():
     timeline_post = TimelinePost.create(name=name, email=email,content=content)
     return model_to_dict(timeline_post)
 
+#timeline GET route
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
     return {
         'timeline_posts': [
             model_to_dict(p)
-            for p in
-TimelinePost.select().order_by(TimelinePost.created_at.desc())
+            for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
     
