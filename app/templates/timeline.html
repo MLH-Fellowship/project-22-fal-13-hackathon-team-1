@@ -29,7 +29,7 @@
 				// Create payload as new FormData object
 				const formData = new FormData(form)
 				// Post the payload using Fetch
-				fetch("http://localhost:5000/api/timeline_post", {
+				fetch("/api/timeline_post", {
 					headers: {
 						"Access-Control-Allow-Origin": "*"
 					},
