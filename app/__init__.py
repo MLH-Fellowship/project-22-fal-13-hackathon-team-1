@@ -8,18 +8,23 @@ from peewee import *
 import datetime
 from playhouse.shortcuts import model_to_dict
 import requests
+import re
 
 load_dotenv()
 app = Flask(__name__)
 
 #MySQL DB
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb =SqliteDatabase('file:memory?mode=memory&cache=shared',
+uri=True)
+else:
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
     user=os.getenv("MYSQL_USER"),
     password=os.getenv("MYSQL_PASSWORD"),
     host=os.getenv("MYSQL_HOST"),
     port=3306
 )
-print(mydb)
 
 #peewee model
     #Create a "timeline post" data table
@@ -38,9 +43,33 @@ mydb.create_tables([TimelinePost])
     #POST
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
+    try:
+        name = request.form['name']
+    except Exception as e:
+        return "Invalid name", 400
+    else:
+        if name == '':
+            return "Invalid name", 400
+    
+    try:
+        email = request.form['email']
+    except Exception as e:
+        return "Invalid email", 400
+    else:
+        if email == '':
+            return "Invalid email", 400
+
+    try:
+        content = request.form['content']
+    except Exception as e:
+        return "Invalid content", 400
+    else:
+        if content == '':
+            return "Invalid content", 400
+
+    if not re.match(r"^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$", email):
+        return "Invalid email", 400
+    
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
     return model_to_dict(timeline_post)
 
