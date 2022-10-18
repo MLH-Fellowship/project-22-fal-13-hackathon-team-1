@@ -6,14 +6,14 @@
 		<input name="content" type="text" />
 		<button type="submit">Submit</button>
 	</form>
-	 <div>
+<div>
 		<h1 class="mt-5">All timeline Posts</h1>
 		{% for post in timeline_posts %}
 		<div class="post">
-			<p>Id: {{timeline_posts["id"]}}</p>
-			<p>Name: {{timeline_posts["name"]}}</p>
-			<p>Email: {{timeline_posts["email"]}}</p>
-			<p>Content: {{timeline_posts["content"]}}</p>
+			<p>Id: {{post["id"]}}</p>
+			<p>Name: {{post["name"]}}</p>
+			<p>Email: {{post["email"]}}</p>
+			<p>Content: {{post["content"]}}</p>
 		</div>
 		<br />
 		{% endfor %}
@@ -37,7 +37,7 @@
 					body: formData,
 				})
 					.then((res) => res.json())
-					.then((data) => console.log(data))
+					.then((data) => location.reload())
           .catch ((err) => console.log("I'm the error", err))
 			});
 		})();

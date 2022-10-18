@@ -162,7 +162,9 @@ def experiencePage():
 # timeline
 @app.route('/timeline')
 def timeline():
-    return render_template('timeline.html', title="MLH Fellow - Timeline", url=os.getenv("URL"))
+    timeline_posts = [model_to_dict(p) for p in TimelinePost.select().order_by(TimelinePost.
+    created_at.desc())]
+    return render_template('timeline.html', title="MLH Fellow - Timeline", url=os.getenv("URL"), timeline_posts=timeline_posts)
 
 # timeline POST route 
 @app.route('/api/timeline_post', methods=['POST'])
