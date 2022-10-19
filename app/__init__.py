@@ -3,9 +3,9 @@ from flask import Flask, render_template, request
 from dotenv import load_dotenv
 from flask_googlemaps import GoogleMaps, Map, icons
 import json
-from peewee import *
+from peewee import*
 import datetime
-from flask import model_to_dict
+from playhouse.shortcuts import model_to_dict
 
 load_dotenv()
 app = Flask(__name__)
@@ -16,9 +16,8 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
     host=os.getenv("MYSQL_HOST"),
     port=3306
 )
-
 print(mydb)
-print("database")
+
 
 
 class TimelinePost (Model) :
@@ -31,7 +30,7 @@ class TimelinePost (Model) :
         database = mydb
     
 mydb.connect()
-mydb.create_tables( [TimelinePost])
+mydb.create_tables([TimelinePost])
 
 os.getenv("API_KEY") 
 educationData = [
@@ -155,7 +154,7 @@ def experiencePage():
     return render_template('experience.html', title="MLH Fellow - Experience", url=os.getenv("URL"), **context)
 
 
-@app. route('/api/timeline post', methods=['POST'])
+@app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name = request.form['name' ]
     email = request. form[ 'email']
