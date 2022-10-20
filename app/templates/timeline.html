@@ -1,8 +1,52 @@
-<!DOCTYPE html>
-<html>
-    <body>
-        <h1>
-            Timeline
-        </h1>
-    </body>
-</html>
+
+{% extends "pageOverlay.html" %} {% block content %}
+<div class="p-10 container-fluid">
+
+        <form id="form">
+            <label for ="name">First name:</label>
+            <input type="text" id ="name" name="name"><br>
+            <label for="email"> E-mail:</label><br>
+            <input type="email" id="email" name="email">
+            <label for="content">Content:</label>
+            <input type="text" id="content" name="content"><br>
+            <button type="submit">Submit</button>
+        </form>
+        
+    
+        <div>
+            <h1 class="mt-5">All timeline Posts</h1>
+            {% for post in timeline_posts %}
+            <div class="post">
+                <p>Id: {{post["id"]}}</p>
+                <p>Name: {{post["name"]}}</p>
+                <p>Email: {{post["email"]}}</p>
+                <p>Content: {{post["content"]}}</p>
+            </div>
+            <br />
+            {% endfor %}
+        </div>
+
+        <script>
+            (function () {
+                const form = document.getElementById("form");
+                form.addEventListener("submit", function (e) {
+                    // Prevent default behavior
+                    e.preventDefault();
+                    // Create payload as new FormData object
+                    const formData = new FormData(form)
+                    // Post the payload using Fetch
+                    fetch("http://localhost:5000/api/timeline_post", {
+                        headers: {
+                            "Access-Control-Allow-Origin": "*"
+                        },
+                        method: "POST",
+                        body: formData,
+                    })
+                        .then((res) => res.json())
+                        .then((data) => location.reload())      //ensures end user does not have to refresh to view changes
+              .catch ((err) => console.log("I'm the error", err))         // returns the erro
+                });
+            })();
+        </script> 
+</div>
+{% endblock content %}
