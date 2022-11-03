@@ -26,13 +26,14 @@ email='john@example.com', content='Hello world, I\'m John!')
         second_post = TimelinePost.create(name='Jane Doe',
 email='jame@example.com'
 , content='Hello world, I\'m Jane!')
-        assert second_post. id == 2
+        assert second_post. id == 2 
 
 #for assert statements
 get_timeline_posts = [
     model_to_dict(item)
-    for item in TimelinePost
+    for item in TimelinePost  
 ]
+
 
 assert get_timeline_posts[0]['name'] == 'John Doe'
 assert get_timeline_posts[1]['name'] == 'Jane Doe'
