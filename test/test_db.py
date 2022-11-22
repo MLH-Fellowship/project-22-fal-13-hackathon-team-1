@@ -1,8 +1,7 @@
 #test_db.py
 
-import unittest
- from peewee import *
-
+import unittest 
+from peewee import *
 from app import TimelinePost
 from playhouse.shortcuts import model_to_dict
 
@@ -29,7 +28,7 @@ class TestTimelinePost(unittest.TestCase):
         #close connection to db
         test_db.close()
 
-     def test_timeline_post(self):
+    def test_timeline_post(self):
         #create 2 timeline posts
         first_post = TimelinePost.create(name='John Doe', email='john@example.com', content='Hello world, I\'m John!')
         assert first_post.id == 1
