@@ -28,7 +28,10 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_IP: ${{ secrets.SSH_IP }}
 
-      - name: Deploy site
-        run: ssh my-vps '/root/project-22-fal-13-hackathon-team-1/redeploy-site.sh'
+      # - name: Deploy site
+      #   run: ssh my-vps '/root/project-22-fal-13-hackathon-team-1/redeploy-site.sh'
+      
+      - name: Print project root directory
+        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && pwd'
 
 #test
