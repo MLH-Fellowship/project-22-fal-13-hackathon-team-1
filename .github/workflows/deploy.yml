@@ -29,6 +29,6 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
 
       - name: Deploy site
-        run: ssh my-vps '~/redeploy-site.sh'
+        run: ssh my-vps '/root/project-22-fal-13-hackathon-team-1/redeploy-site.sh'
 
 #test
