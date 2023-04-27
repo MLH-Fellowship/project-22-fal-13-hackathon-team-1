@@ -8,7 +8,8 @@ In week 1, we made a reusable, responsive, scalable template portfolio. We learn
 
 # Description
 This is a portfolio template which can be easily reused and personalized. 
-
+# Hackathon Winner
+https://devpost.com/software/mlh-portfolio-template-team-1
 The portfolio template consists of 3 main components:
 
 ###### Landing page  
