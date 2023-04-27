@@ -1,6 +1,8 @@
 # Site Realiability Engineering - Week 1 - Template Portfolio Site
 
 In week 1, we made a reusable, responsive, scalable template portfolio. We learned new technologies in Web Development (Flask, Jinja, Google Maps API), we also implemented GitHub best practices to collaborate as a team.
+# Hackathon Winner
+https://devpost.com/software/mlh-portfolio-template-team-1
 
 # Badges
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/MLH-Fellowship/project-22-fal-13-hackathon-team-1?style=plastic)
@@ -8,8 +10,6 @@ In week 1, we made a reusable, responsive, scalable template portfolio. We learn
 
 # Description
 This is a portfolio template which can be easily reused and personalized. 
-# Hackathon Winner
-https://devpost.com/software/mlh-portfolio-template-team-1
 The portfolio template consists of 3 main components:
 
 ###### Landing page  
